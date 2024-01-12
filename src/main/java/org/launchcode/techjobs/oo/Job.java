@@ -44,22 +44,22 @@ public class Job {
             employer.setValue("Data not available");
 
         if(location.getValue().isEmpty())
-            location.setValue("Data is not available");
+            location.setValue("Data not available");
 
         if(positionType.getValue().isEmpty())
-            positionType.setValue("Data is not available");
+            positionType.setValue("Data not available");
 
         if(coreCompetency.getValue().isEmpty())
-            coreCompetency.setValue("Data is not available");
+            coreCompetency.setValue("Data not available");
 
-        return System.lineSeparator() +
+        return "\n" +
                 "ID: " + id + '\n' +
                 "Name: "  + name + '\n' +
                 "Employer: " + employer + '\n' +
                 "Location: " + location + '\n' +
                 "Position Type: " + positionType + '\n' +
                 "Core Competency: " + coreCompetency +
-                System.lineSeparator();
+                "\n";
     }
 
     @Override
@@ -67,11 +67,11 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency);
+        return id == job.id;
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id);
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
