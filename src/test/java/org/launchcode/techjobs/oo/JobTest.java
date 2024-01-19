@@ -44,7 +44,7 @@ public class JobTest {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        job1.equals(job2);
+        assertFalse(job1.equals(job2));
     }
 
     @Test
@@ -71,7 +71,7 @@ public class JobTest {
                 "Position Type: " + "Quality control"  + '\n' +
                 "Core Competency: " + "Persistence" +
                 '\n';
-
+            assertEquals(job1.toString(),expected);
     }
 
     @Test
@@ -86,6 +86,7 @@ public class JobTest {
                 "Position Type: " + "Data not available"  + '\n' +
                 "Core Competency: " + "Data not available" +
                 '\n';
+        assertEquals(job1.toString(),expected);
     }
 }
 
